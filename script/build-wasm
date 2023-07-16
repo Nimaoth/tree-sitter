@@ -39,7 +39,7 @@ while [[ $# > 0 ]]; do
   case "$1" in
     --debug)
       minify_js=0
-      emscripten_flags="-s ASSERTIONS=1 -s SAFE_HEAP=1 -O0"
+      emscripten_flags="-s ASSERTIONS=1 -s SAFE_HEAP=1 -O0 -g"
       ;;
 
     --help)
@@ -94,7 +94,7 @@ $emcc                                            \
   -s INITIAL_MEMORY=33554432                     \
   -s ALLOW_MEMORY_GROWTH=1                       \
   -s MAIN_MODULE=2                               \
-  -s FILESYSTEM=0                                \
+  -s FILESYSTEM=1                                \
   -s NODEJS_CATCH_EXIT=0                         \
   -s NODEJS_CATCH_REJECTION=0                    \
   -s EXPORTED_FUNCTIONS=@${web_dir}/exports.json \

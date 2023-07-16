@@ -29,6 +29,8 @@
   "_memset",
   "_strlen",
   "_towupper",
+  "_puts",
+  "_iprintf",
 
   "_ts_init",
   "_ts_language_field_count",
